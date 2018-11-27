@@ -1,6 +1,6 @@
 grails.project.groupId = "au.org.ala" // change this to alter the default package name and Maven publishing destination
 
-appName = "ala-collectory"
+appName = "nbn-collectory"
 
 grails.appName = appName
 

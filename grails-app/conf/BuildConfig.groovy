@@ -7,7 +7,7 @@ grails.project.target.level = 1.8
 grails.project.source.level = 1.8
 
 //grails.plugin.location."ala-bootstrap2" = "../ala-bootstrap2"
-//grails.plugin.location."collectory-plugin" = "../collectory-plugin"
+grails.plugin.location."collectory-plugin" = "../collectory-plugin"
 
 grails.project.fork = [
     test:       false,
@@ -38,7 +38,7 @@ grails.project.dependency.resolution = {
     }
 
     plugins {
-        runtime ":collectory:1.9.3"
+        //runtime ":collectory:1.9.3" //remove when using local collectory-plugin
         runtime ":ala-bootstrap3:2.1.2"
         runtime ":resources:1.2.14"
         runtime ":cached-resources:1.0"
