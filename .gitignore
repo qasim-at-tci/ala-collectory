@@ -4,6 +4,7 @@ target/*
 out
 target
 .slcache/*
+classes/*
 
 web-app/css/errors.css
 
@@ -32,3 +33,4 @@ web-app/images/skin/sorted_desc.gif
 web-app/images/spinner.gif
 
 web-app/images/springsource.png
+*.class
