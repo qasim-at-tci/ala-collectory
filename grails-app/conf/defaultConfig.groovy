@@ -1,0 +1,1 @@
+uploadFilePath='/data/nbn-collectory/upload'
