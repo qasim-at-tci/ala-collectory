@@ -1,19 +1,20 @@
 language: groovy
 jdk:
 - oraclejdk8
+dist: trusty
 sudo: false
 branches:
   only:
   - master
   - develop
 before_install:
- - wget -q https://raw.githubusercontent.com/AtlasOfLivingAustralia/travis-build-configuration/master/ala_common.sh
- - chmod +x ala_common.sh
- - source ./ala_common.sh
- - ala_travis_grails_setup_env
+- wget -q https://raw.githubusercontent.com/nbnuk/travis-build-configuration/master/ala_common.sh
+- chmod +x ala_common.sh
+- source ./ala_common.sh
+- ala_travis_grails_setup_env
 script:
- - ala_travis_grails_build
+- ala_travis_grails_build
 env:
   global:
-  - secure: anZyiypNFsFqqG4i6qpr3BTD9/yOYSTeW+MIkWKDR68VuY+IAxLCLdDYFUg+lNQbIpiZy8OoLigdgY0AxYw+/IliT/hxBjI64vDEQTkwHI6syb/TAnEdyvWIRtXxj7LqCcRrco1qhNcKD+eYUb4a3/9lRCh3ADhXIh8pFA+1N+s=
-  - secure: BBwEK7eVHFHyE+Hrg/T2dK670jvhvAY56P8KNYslr2V1puD8f5m122TfIbpbltBFJ/oF+xXl3LCVWCPE7wuY1PP14TmLJY0zqARQGsj35c4H0I85+OGVvwp8McX57rEfSnxUYxlVBAlj1xq0U6nq8Bm5Gmk0m/vKEGdvSxvTRGA=
+  - secure: hY7bPNEliYsF9ncZeIOOO1HUDrS4P0g6YtokufFL92UrazFPz+H5caKOrGn3FPEgWUMusbQlSmg1qYSYN8SdgQMo9ROvLQAcq/bnAvnfwn+egkcP7ryNqYtFT7bpWvk7X4k0ucqRqb8KvzYTWGINdYSTr2F4Jt19V3T0R32a6wPn1zG1m8UZ5LSLRQRrI6PmsA1Xj3C87TKIIMYN7IvJDidkXRvKWLoOKChFCa+F0eM39+YMmQHoPkcJK6k+DMpLHRzy1uC+zHUaALjYzUjY/7/PxngHrLZcjR1C2wwKJmdMWuxovTxP3Aa+ojmzKADxHuQss1l6OS5QGwANDcL/BYVg7NM98Q76CzBvDvvSYKgRq+RlAR9KuwNM7rdIaNpbP6E5/EyoET0wtOSJfbWBeRLKMyr6lZeD4AhWrWXUysJzdeVhQBWjUrmvgkioeTl3MhziZHm1cZMtQeoNwUNPUvcrkgOGQYKNkfL8PGQk6KMB317fQC1dn/0RHwFcBpD8SqVOsvP2K1o5uQ+ZkyeVjKpmFZT2GRhAs5hBISiW7UT4bjRamw4QVjoI3q5t16g8kcM/NG6nj2vxE+e8Z3cj7bzAzfoV9IYY/taf0CprTFOJnADY1vqFQp6Tx/vnNn6OuYjKgepffpjel1bSloO0SOXyrzQ7gl4dL1HKm3aY26M=
+  - secure: a5j0ZbbIGebk+wBrhGoyl1UvrBlW4FcfmblSvvDSfLvvt+6C5V6/4USzCXObZFAl1Zhf4PZG4r4Q1tV0rGYAn6xH6NdDblMD+3aEObS0SQu3WwVeVQOLo9kxSWmS5NkO6b6hfiOx9NkxbscTsiyI0/VbkNm1BQ3p39iBlkzty05xXH8FbEAsVcK+eMD5NAwD9P9Y6g0q/WjbQn9XnWL+HSKrTe5YE5RbSXnHW9Y83CbukE4nZ+2OJmS+Es5OjoXbqN4cvKmDhQ0R9gdlAxgaCMz0IRs8uF+Mfq4LDfLFkD3s69GldBdkkn0qzp9c/4o0O3Iwvb8KQYO3gKnvEFoQRVcJXQ9+ZNarX7M6wx9FgXp+2DuXHInhZ9lMeC7fZYj0+qvhHnq/FpH7jRsHNTJwWHQaV+4R8Ty7ossEpvvuSdPr6lqgopyCOdCSkLqirfiaPcjxURAO+Kpaeii+L03hEWbI929iyPncvBM2hdUYjguu42sI/8TaRUqRnsMvjm8XewMnxiWrrI0G0SfE8W1QXGSwHdtYyADaWFeQ8rO4B8ebka0ojoFMvNWeEV59w+VgSfkwkPMfrGTG9wlwAr9ymoDrpnzMK2ScgQmLI0x030jz4oWV5DJEb8NYRbkNVyQu1nFIYVvx2bCd+6dyiXDuVKpdft/pb2sNfkgqA74f+dg=
