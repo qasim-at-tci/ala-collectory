@@ -9,7 +9,7 @@ dataSource {
 hibernate {
     cache.use_second_level_cache=true
     cache.use_query_cache=true
-    cache.provider_class='net.sf.ehcache.hibernate.EhCacheProvider'
+    cache.provider_class='net.sf.ehcache.hibernate.EhCacheRegionFactory' //try to resolve error when attempt to log in SingletonEhCacheRegionFactory
 }
 // environment specific settings
 environments {
