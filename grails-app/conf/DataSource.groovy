@@ -19,7 +19,7 @@ environments {
             dbCreate = "update" // one of 'create', 'create-drop','update'
             url = "jdbc:mysql://localhost:3306/collectory?autoReconnect=true&connectTimeout=0&useSSL=false"
             username = "root"
-            password = ""
+            password = "root"
 //            logSql = true
         }
     }
