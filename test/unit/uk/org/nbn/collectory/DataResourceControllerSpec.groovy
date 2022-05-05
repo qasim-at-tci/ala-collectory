@@ -29,7 +29,7 @@ class DataResourceControllerSpec extends Specification {
         def model = controller.list()
 
         then:
-        model.instanceList.size() ==1
+        model.instanceList.size() == 1
         model.instanceList.get(0).name == "name1"
     }
 
@@ -40,6 +40,6 @@ class DataResourceControllerSpec extends Specification {
         def model = controller.list()
 
         then:
-        model.instanceList.size() ==2
+        model.instanceList.size() == 2
     }
 }

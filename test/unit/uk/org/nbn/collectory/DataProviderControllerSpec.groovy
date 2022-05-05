@@ -26,7 +26,7 @@ class DataProviderControllerSpec extends Specification {
         def model = controller.list()
 
         then:
-        model.instanceList.size() ==1
+        model.instanceList.size() == 1
         model.instanceList.get(0).name == "name1"
     }
 
@@ -36,7 +36,7 @@ class DataProviderControllerSpec extends Specification {
         def model = controller.list()
 
         then:
-        model.instanceList.size() ==1
+        model.instanceList.size() == 1
         model.instanceList.get(0).acronym == "acronym1"
     }
 
@@ -45,6 +45,6 @@ class DataProviderControllerSpec extends Specification {
         def model = controller.list()
 
         then:
-        model.instanceList.size() ==2
+        model.instanceList.size() == 2
     }
 }
