@@ -1,4 +1,4 @@
-package uk.org.nbn
+package uk.org.nbn.collectory
 
 import au.com.bytecode.opencsv.CSVWriter
 import au.org.ala.collectory.Action
