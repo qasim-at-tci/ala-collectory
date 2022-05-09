@@ -11,7 +11,7 @@ import spock.lang.Specification
  */
 @TestFor(DataResourceController)
 @Mock([DataResource, ActivityLog])
-class DataResourceControllerSpec extends Specification {
+class DataResourceControllerSpec extends ProviderGroupControllerSpec {
 
     def setup() {
         new DataResource(uid: "uid", resourceType: 'website',

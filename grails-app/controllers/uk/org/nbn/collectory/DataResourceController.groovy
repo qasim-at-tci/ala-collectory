@@ -4,7 +4,7 @@ import au.org.ala.collectory.Action
 import au.org.ala.collectory.ActivityLog
 import au.org.ala.collectory.DataResource
 
-class DataResourceController extends au.org.ala.collectory.DataResourceController{
+class DataResourceController extends au.org.ala.collectory.DataResourceController implements ProviderGroupControllerTrait{
 
     @Override
     def list() {

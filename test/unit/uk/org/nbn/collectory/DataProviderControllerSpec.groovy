@@ -11,7 +11,7 @@ import spock.lang.Specification
  */
 @TestFor(DataProviderController)
 @Mock([DataProvider, ActivityLog])
-class DataProviderControllerSpec extends Specification {
+class DataProviderControllerSpec extends ProviderGroupControllerSpec {
     def setup() {
         new DataProvider(uid: "uid", name: "name1", acronym: "acronym1", userLastModified: "username").save(flush: true, failOnError: true)
         new DataProvider(uid: "uid", name: "name2", acronym: "acronym2", userLastModified: "username").save(flush: true, failOnError: true)

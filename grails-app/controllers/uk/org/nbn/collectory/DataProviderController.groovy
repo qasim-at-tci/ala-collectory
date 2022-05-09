@@ -11,7 +11,7 @@ import grails.converters.JSON
 import groovy.json.JsonOutput
 import groovy.json.JsonSlurper
 
-class DataProviderController extends au.org.ala.collectory.DataProviderController{
+class DataProviderController extends au.org.ala.collectory.DataProviderController implements ProviderGroupControllerTrait{
 
     def sensitiveDataService
 

@@ -10,7 +10,7 @@ import spock.lang.Specification
  */
 @TestFor(InstitutionController)
 @Mock(Institution)
-class InstitutionControllerSpec extends Specification {
+class InstitutionControllerSpec extends ProviderGroupControllerSpec {
 
     def setup() {
         new Institution(uid: "uid1", name: "name1", acronym: "acronym1", userLastModified: "user1").save(flush: true, failOnError: true)

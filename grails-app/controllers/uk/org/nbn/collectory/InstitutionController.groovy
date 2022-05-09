@@ -2,7 +2,7 @@ package uk.org.nbn.collectory
 
 import au.org.ala.collectory.Institution
 
-class InstitutionController extends au.org.ala.collectory.InstitutionController {
+class InstitutionController extends au.org.ala.collectory.InstitutionController implements ProviderGroupControllerTrait{
 
     @Override
     def list() {

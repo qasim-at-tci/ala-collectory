@@ -1,16 +1,20 @@
 package uk.org.nbn.collectory
 
 import au.org.ala.collectory.ProviderGroup
+import grails.web.Action
 
-abstract class ProviderGroupController extends au.org.ala.collectory.ProviderGroupController{
+/**
+ * Suggested Reading: Traits can call methods and use properties in the implementing class.
+ * https://docs.groovy-lang.org/next/html/documentation/core-traits.html
+ */
+trait ProviderGroupControllerTrait {
     /**
     * Access control
     *
     * All methods require EDITOR role.
     * Edit methods require ADMIN or the user to be an administrator for the entity.
     */
-
-    @Override
+    @Action
     def auth() {
         if (
         !collectoryAuthService?.userInRole(ProviderGroup.ROLE_ADMIN)
@@ -37,6 +41,7 @@ abstract class ProviderGroupController extends au.org.ala.collectory.ProviderGro
             log.info("Auth reason: " + authReason)
             //add some info - why can i see this page ?
             response.setHeader("Collectory-Auth-Reason", authReason)
+            return true
         }
     }
 
@@ -60,5 +65,4 @@ abstract class ProviderGroupController extends au.org.ala.collectory.ProviderGro
     /*
      End access control
      */
-
 }
