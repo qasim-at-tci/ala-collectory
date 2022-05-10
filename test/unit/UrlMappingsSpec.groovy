@@ -1,5 +1,5 @@
 
-import au.org.ala.collectory.SensitiveAccessController
+import uk.org.nbn.collectory.SensitiveAccessController
 import uk.org.nbn.collectory.DataProviderController
 import grails.test.mixin.Mock
 import grails.test.mixin.TestFor
