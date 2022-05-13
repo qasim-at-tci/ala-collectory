@@ -1,6 +1,5 @@
 package uk.org.nbn.collectory
 
-import au.org.ala.collectory.GroupClassification
 import grails.converters.JSON
 import org.springframework.dao.DataIntegrityViolationException
 
