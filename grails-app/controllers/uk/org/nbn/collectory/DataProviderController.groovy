@@ -3,7 +3,6 @@ package uk.org.nbn.collectory
 import au.com.bytecode.opencsv.CSVWriter
 import au.org.ala.collectory.Action
 import au.org.ala.collectory.ActivityLog
-import au.org.ala.collectory.ApprovedAccess
 import au.org.ala.collectory.Collection
 import au.org.ala.collectory.Contact
 import au.org.ala.collectory.DataProvider
