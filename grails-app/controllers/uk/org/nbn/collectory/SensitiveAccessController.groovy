@@ -1,6 +1,6 @@
 package uk.org.nbn.collectory
 
-import au.org.ala.collectory.ApprovedAccess
+
 import au.org.ala.collectory.Contact
 import grails.converters.JSON
 import groovy.json.JsonSlurper
