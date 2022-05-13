@@ -27,7 +27,7 @@ class ContactController extends au.org.ala.collectory.ContactController{
 
     def syncWithAuth(){
         def count = 0
-        Contact.findAll().each {
+        ContactNbn.findAll().each {
 //            if(!it.userId){
             if(it.email) {
                 def url = (grailsApplication.config.userdetails?.url?:"http://set-this-url/") + "userDetails/findUser?q=" + it.email //params.q

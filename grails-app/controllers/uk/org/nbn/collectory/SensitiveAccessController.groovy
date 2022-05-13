@@ -13,7 +13,7 @@ class SensitiveAccessController {
     def index() { }
 
     def lookup(){
-        def contact = Contact.findByUserId(params.userId) //note, contact.user_id, not e.g. approved_access.contact_id
+        def contact = ContactNbn.findByUserId(params.userId) //note, contact.user_id, not e.g. approved_access.contact_id
         def approvals = [
                 dataProviders:[],
                 //dataResources:[],

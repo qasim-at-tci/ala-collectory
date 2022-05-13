@@ -39,7 +39,7 @@ class DataProviderController extends au.org.ala.collectory.DataProviderControlle
 
     def myList = {
         def currentUserId = authService.getUserId()
-        def contact = Contact.findByUserId(currentUserId)
+        def contact = ContactNbn.findByUserId(currentUserId)
         def results = []
         if(contact){
             def contactsFor = contact.getContactsFor()
@@ -59,7 +59,7 @@ class DataProviderController extends au.org.ala.collectory.DataProviderControlle
 
     def specifyAccess = {
         def instance = get(params.id)
-        def contact = Contact.findByUserId(params.userId)
+        def contact = ContactNbn.findByUserId(params.userId)
         def approvedAccess = ApprovedAccess.findByContactAndDataProvider(contact, instance)
 
         def sensitiveSpecies = sensitiveDataService.getSensitiveSpeciesForDataProvider(instance.uid)
@@ -75,7 +75,7 @@ class DataProviderController extends au.org.ala.collectory.DataProviderControlle
 
     def updateSpecifiedAccess = {
         def instance = get(params.id)
-        def contact = Contact.findByUserId(params.userId)
+        def contact = ContactNbn.findByUserId(params.userId)
         def approvedAccess = ApprovedAccess.findByContactAndDataProvider(contact, instance)
 
         def dr_taxa_list = params.dataResourceTaxa
@@ -94,7 +94,7 @@ class DataProviderController extends au.org.ala.collectory.DataProviderControlle
         log.info("userId " + params.userId)
 
         //find a user in the collectory - search by CAS ID
-        def contact = Contact.findByUserId(params.userId)
+        def contact = ContactNbn.findByUserId(params.userId)
         if(!contact){
 
             contact = Contact.findByEmailIlike(params.email)
@@ -136,7 +136,7 @@ class DataProviderController extends au.org.ala.collectory.DataProviderControlle
 
         log.info("userId " + params.userId)
 
-        def contact = Contact.findByUserId(params.userId)
+        def contact = ContactNbn.findByUserId(params.userId)
         def dataProvider = get(params.id)
 
         def aa = ApprovedAccess.findByContactAndDataProvider(contact, dataProvider)
