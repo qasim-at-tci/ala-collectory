@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<eml:eml xmlns:d="eml://ecoinformatics.org/dataset-2.1.0" xmlns:eml="eml://ecoinformatics.org/eml-2.1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dc="http://purl.org/dc/terms/" xsi:schemaLocation="eml://ecoinformatics.org/eml-2.1.1 http://rs.gbif.org/schema/eml-gbif-profile/1.1/eml-gbif-profile.xsd" system="ALA-Registry" scope="system" xml:lang="en" packageId="a0ecd057-0a7e-37f0-9af8-73328191f64d/v8">
+    <dataset>
+        <title xmlns:lang="en">National Mammal Atlas Project, online recording</title>
+
+        <abstract>
+            <para></para>
+            <para>Public sightings of mammals in Britain, submitted via an online recording form.</para>
+        </abstract>
+
+        <additionalInfo>
+            <para></para>
+        </additionalInfo>
+
+        <intellectualRights>
+            <para>CC BY-NC
+                <ulink url="https://creativecommons.org/licenses/by-nc/4.0/">
+                    <citetitle>Creative Commons Attribution Non-Commercial</citetitle>
+                </ulink>
+            </para>
+        </intellectualRights>
+
+
+
+        <coverage>
+            <geographicCoverage>
+                <geographicDescription>British Isles. Coverage is incomplete; occurrence of records is dependent on recording effort. The majority of records in this dataset are provided with 100m or greater precision.</geographicDescription>
+                <boundingCoordinates>
+                    <westBoundingCoordinate></westBoundingCoordinate>
+                    <eastBoundingCoordinate></eastBoundingCoordinate>
+                    <northBoundingCoordinate></northBoundingCoordinate>
+                    <southBoundingCoordinate></southBoundingCoordinate>
+                </boundingCoordinates>
+            </geographicCoverage>
+            <temporalCoverage>
+                <rangeOfDates>
+                    <beginDate>
+                        <calendarDate></calendarDate>
+                    </beginDate>
+                    <endDate>
+                        <calendarDate></calendarDate>
+                    </endDate>
+                </rangeOfDates>
+            </temporalCoverage>
+        </coverage>
+
+        <purpose>
+            <para>Mammals in Britain are critically under-recorded. To address this, The Mammal Society is compiling a National Mammal Atlas, the first for over 20 years, which will provide a detailed, up-to-date picture of mammal distribution and abundance across the British Isles. Records will build the atlas and provide vital information about mammals over the last 15 years, to help us make informed conservation decisions for mammals.</para>
+        </purpose>
+
+        <methods>
+            <methodStep>
+                <description>
+                    <para>Data is collected through an Indicia online recording form http://www.brc.ac.uk/mammals/recording.php, via iRecord http://www.brc.ac.uk/irecord/home) and the Mammal Tracker Smartphone App http://www.mammal.org.uk/mammal_tracker). Data is stored in the Indicia data warehouse, hosted by the Biological Records Centre. Data is verified by experienced mammal experts using the iRecord system.</para>
+                </description>
+            </methodStep>
+            <qualityControl>
+                <description>
+                    <para>Data quality is high, records are validated based on recorder credentials and expert review by mammal experts. Geolocation accuracy is likely to be high use functionality available via the online recording form. Many records also have a photograph attached to aid verification.</para>
+                </description>
+            </qualityControl>
+        </methods>
+
+        <creator>
+            <individualName>
+                <givenName>Nick</givenName>
+                <surName>Jones</surName>
+            </individualName>
+            <phone>123456</phone>
+            <electronicMailAddress>a@a.com</electronicMailAddress>
+        </creator>
+
+        <metadataProvider>
+            <organizationName>Highland Biological Recording Group</organizationName>
+            <individualName>
+                <givenName>James</givenName>
+                <surName>Smith</surName>
+            </individualName>
+            <address>
+                <deliveryPoint>7 Woodside of Culloden</deliveryPoint>
+                <administrativeArea>Inverness-shire</administrativeArea>
+                <postalCode>IV2 5BP</postalCode>
+                <country>Scotland</country>
+            </address>
+            <electronicMailAddress>b@b.com</electronicMailAddress>
+            <phone>543</phone>
+            <onlineUrl></onlineUrl>
+        </metadataProvider>
+
+        <contact>
+            <positionName></positionName>
+            <address>
+                <deliveryPoint></deliveryPoint>
+                <city></city>
+                <administrativeArea></administrativeArea>
+                <postalCode></postalCode>
+                <country></country>
+            </address>
+            <phone></phone>
+            <electronicMailAddress></electronicMailAddress>
+        </contact>
+
+    </dataset>
+
+    <additionalMetadata>
+        <metadata>
+            <gbif>
+                <citation>National Mammal Atlas Project, online recording ([year of download])</citation>
+            </gbif>
+        </metadata>
+    </additionalMetadata>
+
+
+
+</eml:eml>
