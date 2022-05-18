@@ -1,6 +1,5 @@
 package uk.org.nbn.collectory
 
-import au.org.ala.collectory.Address
 import au.org.ala.collectory.DataResourceSummary
 import groovy.json.JsonSlurper
 
@@ -29,9 +28,10 @@ class DataResourceNbn extends au.org.ala.collectory.DataResource{
     @Override
     DataResourceSummary buildSummary() {
         def drs = super.buildSummary()
-        drs.dateCreated = dateCreated
-        drs.lastUpdated = lastUpdated
-        return drs
+        DataResourceSummaryNbn res = new DataResourceSummaryNbn(drs)
+        res.dateCreated = dateCreated
+        res.lastUpdated = lastUpdated
+        return res
     }
 
     //FFTF_NOT_NEEDED LEFT OUT DECOUPED VERSION
