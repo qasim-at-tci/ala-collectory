@@ -29,6 +29,13 @@ class CollectoryAuthService extends au.org.ala.collectory.CollectoryAuthService{
         map
     }
 
+    @Override
+    protected boolean isAuthorisedToEdit(uid) {
+        //customised version had taken this out. To realign with ALA it was put back in
+        //but now we override it to make sure if its used, it returns false (is safe)
+        return false
+    }
+
     /**
      * A user is an EDITOR if they have either the ROLE_ADMIN or ROLE_COLLECTION_ADMIN roles.
      *
