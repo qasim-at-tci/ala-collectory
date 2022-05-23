@@ -41,7 +41,4 @@ class ContactNbn extends au.org.ala.collectory.Contact{
 
     static hasMany = [approvedAccess: ApprovedAccess]
 
-    def test() {
-        return "whoop whoop"
-    }
 }
