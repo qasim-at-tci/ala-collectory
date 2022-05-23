@@ -39,12 +39,14 @@ class EmlImportService extends au.org.ala.collectory.EmlImportService{
         def contacts = super.extractFromEml(eml, dataResource)
 
         contacts.each { contact ->
+            contact.firstName = contact.firstName?:''
+            contact.lastName = contact.firstName?:''
+            contact.email = contact.email?:''
             if (!contact.phone || !contact.mobile) {
                 if (!addPhoneToContact(eml.dataset.creator, contact))
                     addPhoneToContact(eml.dataset.metadataProvider, contact)
             }
         }
-
     }
 
 
