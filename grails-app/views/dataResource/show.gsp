@@ -339,7 +339,7 @@
               <!-- Record consumers -->
               <cl:isAdmin>
                   <g:if test="${instance.resourceType == 'records'}">
-                      <g:render plugin="collectory" template="/shared/consumers" model="[instance: instance]"/>
+                      <g:render template="/shared/consumers" model="[instance: instance]"/>
                   </g:if>
               </cl:isAdmin>
 
@@ -362,7 +362,7 @@
 </cl:isAdmin>
 
               <g:if test="${grailsApplication.config.loggerURL}">
-                  <g:render plugin="collectory" template="/shared/userReports" model="[instance: instance]"/>
+                  <g:render template="/shared/userReports" model="[instance: instance]"/>
               </g:if>
 
               <!-- GBIF integration -->
