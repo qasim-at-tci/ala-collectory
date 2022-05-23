@@ -12,9 +12,15 @@ import grails.transaction.Transactional
 class CrudService extends au.org.ala.collectory.CrudService{
 
     CrudService(){
-        baseStringProperties << "groupClassification"
-        dataResourceStringProperties <<  "dateCreated"
-        dataResourceStringProperties << "lastUpdated"
+        if (!baseStringProperties.contains("groupClassification")) {
+            baseStringProperties << "groupClassification"
+        }
+        if (!dataResourceStringProperties.contains("dateCreated")) {
+            dataResourceStringProperties << "dateCreated"
+        }
+        if (!dataResourceStringProperties.contains("lastUpdated")) {
+            dataResourceStringProperties << "lastUpdated"
+        }
     }
 
     @Override
