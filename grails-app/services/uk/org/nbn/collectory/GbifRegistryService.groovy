@@ -61,7 +61,7 @@ class GbifRegistryService extends au.org.ala.collectory.GbifRegistryService {
             def uid = result.fq.replaceAll("\"","").replaceAll("data_resource_uid:","")
 
             //retrieve current licence
-            def dataResource = DataResourceNbn.findByUid(uid)
+            def dataResource = DataResource.findByUid(uid)
             if(dataResource) {
 
                 def isShareable = true
