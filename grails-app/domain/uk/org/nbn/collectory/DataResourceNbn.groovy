@@ -7,7 +7,6 @@ class DataResourceNbn extends au.org.ala.collectory.DataResource{
 
     static mapping = {
         discriminator "au.org.ala.collectory.DataResource"
-        keywords type: "text"
     }
 
     //FFTF_NOT_NEEDED LEFT OUT DECOUPED VERSION

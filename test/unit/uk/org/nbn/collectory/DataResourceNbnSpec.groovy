@@ -2,6 +2,7 @@ package uk.org.nbn.collectory
 
 import au.org.ala.collectory.DataHub
 import au.org.ala.collectory.DataLink
+import au.org.ala.collectory.DataResource
 import grails.test.mixin.Mock
 import grails.test.mixin.TestFor
 import spock.lang.Specification
