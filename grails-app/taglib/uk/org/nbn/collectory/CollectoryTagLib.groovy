@@ -99,6 +99,7 @@ class CollectoryTagLib extends au.org.ala.collectory.CollectoryTagLib{
     def isAuth = { attrs, body ->
        //nbn customised this method by removing it from the tag library so added it back and override
         // as an empty method
+        log.error("isAuth tag called but its not implemented")
     }
 
     //@Override the method in au.org.ala.collectory.CollectoryTagLib
