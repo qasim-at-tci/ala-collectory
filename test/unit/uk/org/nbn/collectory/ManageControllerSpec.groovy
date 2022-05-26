@@ -1,7 +1,6 @@
 package uk.org.nbn.collectory
 
 import au.org.ala.collectory.Contact
-import au.org.ala.collectory.CollectoryAuthService
 import grails.test.mixin.Mock
 import grails.test.mixin.TestFor
 import spock.lang.Specification
