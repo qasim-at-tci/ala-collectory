@@ -1,34 +1,43 @@
-
 dataSource {
     pooled = true
     driverClassName = "com.mysql.jdbc.Driver"
     username = "root"
     password = ""
-//    logSql = true
+    logSql = false
 }
 hibernate {
     cache.use_second_level_cache=true
     cache.use_query_cache=true
-    cache.provider_class='net.sf.ehcache.hibernate.EhCacheRegionFactory' //try to resolve error when attempt to log in SingletonEhCacheRegionFactory
+    cache.provider_class='net.sf.ehcache.hibernate.EhCacheProvider'
 }
-// environment specific settings
+
 environments {
     development {
         dataSource {
             dialect = org.hibernate.dialect.MySQL5InnoDBDialect
             dbCreate = "update" // one of 'create', 'create-drop','update'
-            url = "jdbc:mysql://localhost:3306/collectory?autoReconnect=true&connectTimeout=0&useSSL=false"
+            url = "jdbc:mysql://localhost:3306/collectory?autoReconnect=true&connectTimeout=0"
             username = "root"
-            password = "root"
-//            logSql = true
+            password = ""
+            logSql = false
         }
     }
     test {
         dataSource {
+            pooled = true
+            dbCreate = 'update'
+            driverClassName = "org.h2.Driver"
+            url = "jdbc:h2:mem:default"
+            username = ""
+            password = ""
+            logSql = false
+        }
+        /*
+        dataSource {
             dialect = org.hibernate.dialect.MySQL5InnoDBDialect
             dbCreate = "update"
-            url = "jdbc:mysql://localhost:3306/collectory?autoReconnect=true&connectTimeout=0&useSSL=false"
-//            logSql = true
+            url = "jdbc:mysql://localhost:3306/collectory?autoReconnect=true&connectTimeout=0"
+            logSql = false
             username = "root"
             password = ""
             properties {
@@ -42,12 +51,13 @@ environments {
                 validationQuery = ""
             }
         }
+        */
     }
     production {
         dataSource {
             dialect = org.hibernate.dialect.MySQL5InnoDBDialect
-            dbCreate = "update"
-            url = "jdbc:mysql://localhost:3306/collectory?autoReconnect=true&connectTimeout=0&useSSL=false"
+            dbCreate = "validate"
+            url = "jdbc:mysql://localhost:3306/collectory?autoReconnect=true&connectTimeout=0"
             logSql = false
             properties {
                 maxActive = 50
@@ -62,3 +72,4 @@ environments {
         }
     }
 }
+
