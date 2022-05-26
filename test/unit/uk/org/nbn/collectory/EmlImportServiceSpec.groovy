@@ -40,13 +40,12 @@ class EmlImportServiceSpec extends Specification implements TestUtil{
         setup:
         def tmp = copyToTempFile("eml.xml")
         def xml = new XmlSlurper().parse(tmp)
-        service.collectoryAuthService = Mock(CollectoryAuthService)
+        service.collectoryAuthService = Mock(uk.org.nbn.collectory.CollectoryAuthService)
         service.collectoryAuthService.username() >> "user"
         new Contact(email: "a@a.com", userLastModified:"user", lastName:"lastNamea", firstName:"firstNamea").save(flush: true, failOnError: true)
+        def dataResource = new DataResourceNbn()
 
         expect:
-
-        def dataResource = new DataResourceNbn()
         def contacts = service.extractFromEml(xml, dataResource)
         contacts.size() == 2
         contacts[0].phone == "123456"

@@ -1,6 +1,7 @@
 package uk.org.nbn.collectory
 
 import au.org.ala.collectory.Contact
+import grails.transaction.NotTransactional
 import grails.transaction.Transactional
 import groovy.util.slurpersupport.GPathResult
 import org.apache.commons.lang.StringUtils
@@ -35,7 +36,13 @@ class EmlImportService extends au.org.ala.collectory.EmlImportService{
     }
 
     @Override
+    @NotTransactional
+    //overriding transactional methods produces stackoverflow ( fixed in > Gorm 6.1.4)
     def extractFromEml(eml, dataResource) {
+        extractFromEmlTransactional(eml, dataResource)
+    }
+
+    def extractFromEmlTransactional(eml, dataResource) {
         def contacts = super.extractFromEml(eml, dataResource)
 
         contacts.each { contact ->
