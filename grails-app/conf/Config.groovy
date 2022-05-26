@@ -119,6 +119,10 @@ if (!citation.rights.template) {
 if (!resource.publicArchive.url.template) {
     resource.publicArchive.url.template = "${biocacheUiURL}/archives/@UID@/@UID@_ror_dwca.zip"
 }
+
+if (!resource.gbifExport.url.template) {
+    resource.gbifExport.url.template = "${biocacheUiURL}/archives/@UID@/@UID@_ror_dwca.zip"
+}
 /******************************************************************************\
 *  ADDITIONAL CONFIG
 \******************************************************************************/
@@ -217,7 +221,7 @@ grails.validateable.packages = ['au.org.ala.collectory']
 
 /******* location of images **********/
 // default location for images
-repository.location.images = '/data/ala-collectory/data'
+repository.location.images = '/data/nbn-collectory/data'
 
 grails.plugins.cookie.cookieage.default = 360 * 24 * 60 * 60
 
@@ -307,7 +311,8 @@ log4j = {
     debug   'grails.app.services',
             'grails.app.controllers',
             'grails.app.services',
-            'au.org.ala.collectory'
+            'au.org.ala.collectory',
+            'org.hibernate.SQL'
 }
 // Uncomment and edit the following lines to start using Grails encoding & escaping improvements
 
