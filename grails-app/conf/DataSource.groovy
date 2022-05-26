@@ -2,7 +2,7 @@ dataSource {
     pooled = true
     driverClassName = "com.mysql.jdbc.Driver"
     username = "root"
-    password = ""
+    password = "root"
     logSql = false
 }
 hibernate {
@@ -16,7 +16,7 @@ environments {
         dataSource {
             dialect = org.hibernate.dialect.MySQL5InnoDBDialect
             dbCreate = "update" // one of 'create', 'create-drop','update'
-            url = "jdbc:mysql://localhost:3306/collectory?autoReconnect=true&connectTimeout=0"
+            url = "jdbc:mysql://localhost:3306/collectory?autoReconnect=true&connectTimeout=0&useSSL=false"
             username = "root"
             password = ""
             logSql = false
@@ -57,7 +57,7 @@ environments {
         dataSource {
             dialect = org.hibernate.dialect.MySQL5InnoDBDialect
             dbCreate = "validate"
-            url = "jdbc:mysql://localhost:3306/collectory?autoReconnect=true&connectTimeout=0"
+            url = "jdbc:mysql://localhost:3306/collectory?autoReconnect=true&connectTimeout=0&useSSL=false"
             logSql = false
             properties {
                 maxActive = 50
