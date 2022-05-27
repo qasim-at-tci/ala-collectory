@@ -10,6 +10,7 @@
     An error has occurred
 </h1>
 <g:if env="development">
+    <h2>The following exception is only displayed in development</h2>
     <g:renderException exception="${exception}" />
 </g:if>
 <g:else>
