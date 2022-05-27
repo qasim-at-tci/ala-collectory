@@ -21,7 +21,7 @@ import spock.lang.Specification
  */
 @TestFor(CrudService)
 @TestMixin(ControllerUnitTestMixin)
-@Mock([DataProvider, DataLink, ExternalIdentifier, DataHub, DataResource, Institution, Collection])
+@Mock([DataProviderNbn, DataLink, ExternalIdentifier, DataHubNbn, DataResourceNbn, InstitutionNbn, CollectionNbn])
 class CrudServiceSpec extends Specification {
 
     def setup() {
@@ -36,7 +36,7 @@ class CrudServiceSpec extends Specification {
 
     void "test groupClassification added to DataProvider JSON"() {
         setup:
-        def dp = new DataProvider(uid: "dp101", groupClassification:"dp101_groupClassification", name: "name1", email: "hmj@test.com", acronym: "acronym1", userLastModified: "username").save(flush: true, failOnError: true)
+        def dp = new DataProviderNbn(uid: "dp101", groupClassification:"dp101_groupClassification", name: "name1", email: "hmj@test.com", acronym: "acronym1", userLastModified: "username").save(flush: true, failOnError: true)
 
         expect:
         def res = service.readDataProvider(dp)
@@ -46,7 +46,7 @@ class CrudServiceSpec extends Specification {
 
     void "test NBN networkMembership added to DataProvider JSON"() {
         setup:
-        def dp = new DataProvider(uid: "dp101", networkMembership:"['CHACM','NBN']", groupClassification:"dp101_groupClassification", name: "name1", email: "hmj@test.com", acronym: "acronym1", userLastModified: "username").save(flush: true, failOnError: true)
+        def dp = new DataProviderNbn(uid: "dp101", networkMembership:"['CHACM','NBN']", groupClassification:"dp101_groupClassification", name: "name1", email: "hmj@test.com", acronym: "acronym1", userLastModified: "username").save(flush: true, failOnError: true)
 
         expect:
         def res = service.readDataProvider(dp)
@@ -57,7 +57,7 @@ class CrudServiceSpec extends Specification {
 
     void "test when DataProvider has no networkMembership specified, read should not error"() {
         setup:
-        def dp = new DataProvider(uid: "dp101", groupClassification:"dp101_groupClassification", name: "name1", email: "hmj@test.com", acronym: "acronym1", userLastModified: "username").save(flush: true, failOnError: true)
+        def dp = new DataProviderNbn(uid: "dp101", groupClassification:"dp101_groupClassification", name: "name1", email: "hmj@test.com", acronym: "acronym1", userLastModified: "username").save(flush: true, failOnError: true)
 
         expect:
         def res = service.readDataProvider(dp)
@@ -67,7 +67,7 @@ class CrudServiceSpec extends Specification {
 
     void "test groupClassification added to DataHub JSON"() {
         setup:
-        def dp = new DataHub(uid: "dh101", groupClassification:"dh101_groupClassification", name: "name1", email: "hmj@test.com", acronym: "acronym1", userLastModified: "username").save(flush: true, failOnError: true)
+        def dp = new DataHubNbn(uid: "dh101", groupClassification:"dh101_groupClassification", name: "name1", email: "hmj@test.com", acronym: "acronym1", userLastModified: "username").save(flush: true, failOnError: true)
 
         expect:
         def res = service.readDataHub(dp)
@@ -77,7 +77,7 @@ class CrudServiceSpec extends Specification {
 
     void "test NBN networkMembership added to DataHub JSON"() {
         setup:
-        def dp = new DataHub(uid: "dh101", networkMembership:"['CHACM','NBN']", groupClassification:"dh101_groupClassification", name: "name1", email: "hmj@test.com", acronym: "acronym1", userLastModified: "username").save(flush: true, failOnError: true)
+        def dp = new DataHubNbn(uid: "dh101", networkMembership:"['CHACM','NBN']", groupClassification:"dh101_groupClassification", name: "name1", email: "hmj@test.com", acronym: "acronym1", userLastModified: "username").save(flush: true, failOnError: true)
 
         expect:
         def res = service.readDataHub(dp)
@@ -88,7 +88,7 @@ class CrudServiceSpec extends Specification {
 
     void "test when DataHub has no networkMembership specified, read should not error"() {
         setup:
-        def dp = new DataHub(uid: "dh101",groupClassification:"dh101_groupClassification", name: "name1", email: "hmj@test.com", acronym: "acronym1", userLastModified: "username").save(flush: true, failOnError: true)
+        def dp = new DataHubNbn(uid: "dh101",groupClassification:"dh101_groupClassification", name: "name1", email: "hmj@test.com", acronym: "acronym1", userLastModified: "username").save(flush: true, failOnError: true)
 
         expect:
         def res = service.readDataHub(dp)
@@ -98,7 +98,7 @@ class CrudServiceSpec extends Specification {
 
     void "test NBN networkMembership added to DataResource JSON"() {
         setup:
-        def dp = new DataResource(uid: "dr101", networkMembership:"['CHACM','NBN']", groupClassification:"dr101_groupClassification", name: "name1", email: "hmj@test.com", acronym: "acronym1", userLastModified: "username").save(flush: true, failOnError: true)
+        def dp = new DataResourceNbn(uid: "dr101", networkMembership:"['CHACM','NBN']", groupClassification:"dr101_groupClassification", name: "name1", email: "hmj@test.com", acronym: "acronym1", userLastModified: "username").save(flush: true, failOnError: true)
 
         expect:
         def res = service.readDataResource(dp)
@@ -109,7 +109,7 @@ class CrudServiceSpec extends Specification {
 
     void "test when DataResource has no networkMembership specified, read should not error"() {
         setup:
-        def dp = new DataResource(uid: "dr101",groupClassification:"dr101_groupClassification", name: "name1", email: "hmj@test.com", acronym: "acronym1", userLastModified: "username").save(flush: true, failOnError: true)
+        def dp = new DataResourceNbn(uid: "dr101",groupClassification:"dr101_groupClassification", name: "name1", email: "hmj@test.com", acronym: "acronym1", userLastModified: "username").save(flush: true, failOnError: true)
 
         expect:
         def res = service.readDataResource(dp)
@@ -120,7 +120,7 @@ class CrudServiceSpec extends Specification {
 
     void "test NBN networkMembership added to Collection JSON"() {
         setup:
-        def dp = new Collection(uid: "co101", networkMembership:"['CHACM','NBN','UNKOWN']", groupClassification:"co101_groupClassification", name: "name1", email: "hmj@test.com", acronym: "acronym1", userLastModified: "username").save(flush: true, failOnError: true)
+        def dp = new CollectionNbn(uid: "co101", networkMembership:"['CHACM','NBN','UNKOWN']", groupClassification:"co101_groupClassification", name: "name1", email: "hmj@test.com", acronym: "acronym1", userLastModified: "username").save(flush: true, failOnError: true)
 
         expect:
         def res = service.readCollection(dp)
@@ -131,7 +131,7 @@ class CrudServiceSpec extends Specification {
 
     void "test when Collection has no networkMembership specified, read should not error"() {
         setup:
-        def dp = new Collection(uid: "co101",groupClassification:"co101_groupClassification", name: "name1", email: "hmj@test.com", acronym: "acronym1", userLastModified: "username").save(flush: true, failOnError: true)
+        def dp = new CollectionNbn(uid: "co101",groupClassification:"co101_groupClassification", name: "name1", email: "hmj@test.com", acronym: "acronym1", userLastModified: "username").save(flush: true, failOnError: true)
 
         expect:
         def res = service.readCollection(dp)

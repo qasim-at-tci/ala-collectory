@@ -62,11 +62,11 @@ class CollectoryTagLib extends au.org.ala.collectory.CollectoryTagLib{
             if(collectoryAuthService.userInRole(ProviderGroup.ROLE_ADMIN)){
                 authReason += "Logged in user has ${ProviderGroup.ROLE_ADMIN};"
             }
-            if(collectoryAuthService.userInRole(ProviderGroup.ROLE_COLLECTION_ADMIN)){
-                authReason += "Logged in user has ${ProviderGroup.ROLE_COLLECTION_ADMIN};"
+            if(collectoryAuthService.userInRole(ProviderGroupNbn.ROLE_COLLECTION_ADMIN)){
+                authReason += "Logged in user has ${ProviderGroupNbn.ROLE_COLLECTION_ADMIN};"
             }
-            if(collectoryAuthService.userInRole(ProviderGroup.ROLE_COLLECTION_EDITOR)){
-                authReason += "Logged in user has ${ProviderGroup.ROLE_COLLECTION_EDITOR};"
+            if(collectoryAuthService.userInRole(ProviderGroupNbn.ROLE_COLLECTION_EDITOR)){
+                authReason += "Logged in user has ${ProviderGroupNbn.ROLE_COLLECTION_EDITOR};"
             }
             def result = collectoryAuthService.isUserAuthorisedEditorForEntity(collectoryAuthService.authService.getUserId(), attrs.entity)
             if(result.authorised){
@@ -148,7 +148,7 @@ class CollectoryTagLib extends au.org.ala.collectory.CollectoryTagLib{
         ProviderGroup pg = attrs.coll
         if (pg) {
             // check collection's membership
-            ProviderGroup.networkTypes.each {
+            ProviderGroupNbn.networkTypes.each {
                 if (pg.isMemberOf(it)) {
                     out << "<span class='label' style='color:#333'>Member of ${it} </span> <br/>"
                     // this will be tidied up when hubs are entities

@@ -271,7 +271,7 @@
 
                 </g:if>
 
-                <cl:ifAnyGranted roles="${[ProviderGroup.ROLE_ADMIN,ProviderGroup.ROLE_COLLECTION_ADMIN]}">
+                <cl:ifAnyGranted roles="${[ProviderGroup.ROLE_ADMIN,ProviderGroupNbn.ROLE_COLLECTION_ADMIN]}">
                   <div><span class="buttons"><g:link class="edit btn btn-default" action='edit' params="[page:'contribution']" id="${instance.uid}">${message(code: 'default.button.edit.label', default: 'Edit')}</g:link></span></div>
                 </cl:ifAnyGranted>
 

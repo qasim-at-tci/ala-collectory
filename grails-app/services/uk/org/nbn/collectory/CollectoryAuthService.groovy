@@ -16,7 +16,7 @@ class CollectoryAuthService extends au.org.ala.collectory.CollectoryAuthService{
     @Override
     def isAdmin() {
         def adminFlag = super.isAdmin()
-        return adminFlag || (authService && authService.userInRole(ProviderGroup.ROLE_COLLECTION_ADMIN))
+        return adminFlag || (authService && authService.userInRole(ProviderGroupNbn.ROLE_COLLECTION_ADMIN))
     }
 
     @Override
@@ -47,9 +47,9 @@ class CollectoryAuthService extends au.org.ala.collectory.CollectoryAuthService{
             adminFlag = true
         } else {
             if(authService) {
-                adminFlag = authService.userInRole(ProviderGroup.ROLE_COLLECTION_EDITOR) ||
-                        authService.userInRole(ProviderGroup.ROLE_ADMIN) ||
-                        authService.userInRole(ProviderGroup.ROLE_COLLECTION_ADMIN)
+                adminFlag = authService.userInRole(ProviderGroupNbn.ROLE_COLLECTION_EDITOR) ||
+                        authService.userInRole(ProviderGroupNbn.ROLE_ADMIN) ||
+                        authService.userInRole(ProviderGroupNbn.ROLE_COLLECTION_ADMIN)
             }
         }
         return adminFlag
@@ -57,7 +57,7 @@ class CollectoryAuthService extends au.org.ala.collectory.CollectoryAuthService{
 
     def getRoles(){
         def roles = []
-        ProviderGroup.COLLECTORY_ROLES.each {
+        ProviderGroupNbn.COLLECTORY_ROLES.each {
             if(authService.userInRole(it)){
                 roles << it
             }

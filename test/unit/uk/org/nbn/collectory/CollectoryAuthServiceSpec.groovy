@@ -30,7 +30,7 @@ class CollectoryAuthServiceSpec extends Specification {
     void "test is admin if has ROLE_COLLECTION_ADMIN"() {
         setup:
         service.authService.userInRole(ProviderGroup.ROLE_ADMIN) >> false
-        service.authService.userInRole(ProviderGroup.ROLE_COLLECTION_ADMIN) >> true
+        service.authService.userInRole(ProviderGroupNbn.ROLE_COLLECTION_ADMIN) >> true
         Holders.grailsApplication.config.security.cas.bypass = "false"
 
         expect:
@@ -40,7 +40,7 @@ class CollectoryAuthServiceSpec extends Specification {
     void "test is admin if has ROLE_ADMIN"() {
         setup:
         service.authService.userInRole(ProviderGroup.ROLE_ADMIN) >> true
-        service.authService.userInRole(ProviderGroup.ROLE_COLLECTION_ADMIN) >> false
+        service.authService.userInRole(ProviderGroupNbn.ROLE_COLLECTION_ADMIN) >> false
         Holders.grailsApplication.config.security.cas.bypass = "false"
 
         expect:
@@ -50,7 +50,7 @@ class CollectoryAuthServiceSpec extends Specification {
     void "test is NOT admin if not has ROLE_ADMIN or ROLE_COLLECTION_ADMIN"() {
         setup:
         service.authService.userInRole(ProviderGroup.ROLE_ADMIN) >> false
-        service.authService.userInRole(ProviderGroup.ROLE_COLLECTION_ADMIN) >> false
+        service.authService.userInRole(ProviderGroupNbn.ROLE_COLLECTION_ADMIN) >> false
         Holders.grailsApplication.config.security.cas.bypass = "false"
 
         expect:

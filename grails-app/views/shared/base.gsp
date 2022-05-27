@@ -113,7 +113,7 @@
                 <cl:isAdmin>
                 <div class="form-group">
                     <label for="networkMembership"><g:message code="providerGroup.networkMembership.label" default="Belongs to" /><cl:helpText code="providerGroup.networkMembership"/></label>
-                    <cl:checkboxSelect name="networkMembership" from="${ProviderGroup.networkTypes}" value="${command?.networkMembership}" multiple="yes" valueMessagePrefix="providerGroup.networkMembership" noSelection="['': '']" />
+                    <cl:checkboxSelect name="networkMembership" from="${ProviderGroupNbn.networkTypes}" value="${command?.networkMembership}" multiple="yes" valueMessagePrefix="providerGroup.networkMembership" noSelection="['': '']" />
                 </div>
                 </cl:isAdmin>
                 <!-- web site url -->

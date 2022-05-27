@@ -8,14 +8,14 @@ import spock.lang.Specification
 /**
  * See the API for {@link grails.test.mixin.web.ControllerUnitTestMixin} for usage instructions
  */
-@TestFor(Collection)
-class CollectionSpec extends Specification {
+@TestFor(CollectionNbn)
+class CollectionNbnSpec extends Specification {
 
     def setup() {
         BootStrap.initCollectionDomain()
-        new Collection(uid:1, userLastModified: "u1", name:'dog').save(flush: true, failOnError: true)
-        new Collection(uid:2, userLastModified: "u2", name:'cat').save(flush: true, failOnError: true)
-        new Collection(uid:3, userLastModified: "u3", name:'monkey').save(flush: true, failOnError: true)
+        new CollectionNbn(uid:1, userLastModified: "u1", name:'dog').save(flush: true, failOnError: true)
+        new CollectionNbn(uid:2, userLastModified: "u2", name:'cat').save(flush: true, failOnError: true)
+        new CollectionNbn(uid:3, userLastModified: "u3", name:'monkey').save(flush: true, failOnError: true)
     }
 
     void "test list (list everything)"() {

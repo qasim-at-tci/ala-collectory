@@ -24,7 +24,7 @@ abstract class ProviderGroupControllerSpec extends Specification {
         controller.collectoryAuthService = Mock(CollectoryAuthService)
         controller.collectoryAuthService.authService >> Mock(AuthService)
         controller.collectoryAuthService.userInRole(ProviderGroup.ROLE_ADMIN) >> false
-        controller.collectoryAuthService.userInRole(ProviderGroup.ROLE_COLLECTION_EDITOR) >> false
+        controller.collectoryAuthService.userInRole(ProviderGroupNbn.ROLE_COLLECTION_EDITOR) >> false
         controller.collectoryAuthService.authService.getUserId() >>1
         controller.isUserAuthorisedEditorForEntity()>> false
         Holders.grailsApplication.config.security.cas.bypass = "false"
@@ -38,7 +38,7 @@ abstract class ProviderGroupControllerSpec extends Specification {
         controller.collectoryAuthService = Mock(CollectoryAuthService)
         controller.collectoryAuthService.authService >> Mock(AuthService)
         controller.collectoryAuthService.userInRole(ProviderGroup.ROLE_ADMIN) >> true
-        controller.collectoryAuthService.userInRole(ProviderGroup.ROLE_COLLECTION_EDITOR) >> false
+        controller.collectoryAuthService.userInRole(ProviderGroupNbn.ROLE_COLLECTION_EDITOR) >> false
         controller.collectoryAuthService.authService.getUserId() >>1
         controller.isUserAuthorisedEditorForEntity()>> false
         Holders.grailsApplication.config.security.cas.bypass = "false"
@@ -52,7 +52,7 @@ abstract class ProviderGroupControllerSpec extends Specification {
         controller.collectoryAuthService = Mock(CollectoryAuthService)
         controller.collectoryAuthService.authService >> Mock(AuthService)
         controller.collectoryAuthService.userInRole(ProviderGroup.ROLE_ADMIN) >> true
-        controller.collectoryAuthService.userInRole(ProviderGroup.ROLE_COLLECTION_EDITOR) >> false
+        controller.collectoryAuthService.userInRole(ProviderGroupNbn.ROLE_COLLECTION_EDITOR) >> false
         controller.collectoryAuthService.authService.getUserId() >>1
         controller.isUserAuthorisedEditorForEntity()>> false
         Holders.grailsApplication.config.security.cas.bypass = "false"

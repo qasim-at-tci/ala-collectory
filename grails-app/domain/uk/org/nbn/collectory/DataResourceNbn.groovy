@@ -5,8 +5,15 @@ import groovy.json.JsonSlurper
 
 class DataResourceNbn extends au.org.ala.collectory.DataResource{
 
+    String groupClassification  // classification of provider
+
     static mapping = {
         discriminator "au.org.ala.collectory.DataResource"
+        groupClassification type: "text"
+    }
+
+    static constraints = {
+        groupClassification(nullable:true, maxSize:256)
     }
 
     //FFTF_NOT_NEEDED LEFT OUT DECOUPED VERSION

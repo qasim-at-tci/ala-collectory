@@ -18,7 +18,7 @@ trait ProviderGroupControllerTrait {
     def auth() {
         if (
         !collectoryAuthService?.userInRole(ProviderGroup.ROLE_ADMIN)
-                && !collectoryAuthService?.userInRole(ProviderGroup.ROLE_COLLECTION_EDITOR)
+                && !collectoryAuthService?.userInRole(ProviderGroupNbn.ROLE_COLLECTION_EDITOR)
                 && !grailsApplication.config.security.cas.bypass.toBoolean()
                 && !isUserAuthorisedEditorForEntity(collectoryAuthService.authService.getUserId(), (params.id != null? params.id : params.uid))
         ) {
