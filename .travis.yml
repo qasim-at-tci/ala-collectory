@@ -7,6 +7,7 @@ branches:
   only:
   - master
   - develop
+  - FFTF
 before_install:
 - wget -q https://raw.githubusercontent.com/nbnuk/travis-build-configuration/master/ala_common.sh
 - chmod +x ala_common.sh
