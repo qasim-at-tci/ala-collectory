@@ -1,4 +1,4 @@
-<%@ page import="au.org.ala.collectory.DataResource; au.org.ala.collectory.DataProvider; au.org.ala.collectory.ProviderGroup; au.org.ala.collectory.Institution; uk.org.nbn.collectory.GroupClassification" %>
+<%@ page import="au.org.ala.collectory.DataResource; au.org.ala.collectory.DataProvider; uk.org.nbn.collectory.ProviderGroupNbn; au.org.ala.collectory.Institution; uk.org.nbn.collectory.GroupClassification" %>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -101,7 +101,7 @@
                     </div>
                 </g:if>
                 <!-- ALA partner -->
-                <cl:ifGranted role="${ProviderGroup.ROLE_ADMIN}">
+                <cl:ifGranted role="${ProviderGroupNbn.ROLE_ADMIN}">
                     <div class="checkbox">
                         <label for="isALAPartner">
                             <g:checkBox name="isALAPartner" value="${command?.isALAPartner}" />

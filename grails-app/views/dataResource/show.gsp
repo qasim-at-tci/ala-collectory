@@ -1,4 +1,4 @@
-<%@ page import="grails.converters.JSON; au.org.ala.collectory.ProviderGroup; au.org.ala.collectory.DataProvider" %>
+<%@ page import="grails.converters.JSON; au.org.ala.collectory.ProviderGroup;uk.org.nbn.collectory.ProviderGroupNbn; au.org.ala.collectory.DataProvider" %>
 <%@ page import="au.org.ala.collectory.GbifRegistryService" %>
 <html>
     <head>
