@@ -165,7 +165,7 @@ class CollectoryTagLib extends au.org.ala.collectory.CollectoryTagLib{
                         out << "<img class='img-polaroid' src='" + resource(absolute:"true", dir:"data/network/",file:"chacm.png") + "'/>"
                     }
                     if (it == "NBN") {
-                        out << "<img class='img-polaroid' src='" + resource(absolute:"true", dir:"data/network/",file:"nbn.png") + "'/>"
+                        out << "<img class='img-polaroid' src='" + resource(nbn:"true", absolute:"true", dir:"data/network/",file:"nbn.png") + "'/>"
                     }
                     out << "<br/>"
                 }
