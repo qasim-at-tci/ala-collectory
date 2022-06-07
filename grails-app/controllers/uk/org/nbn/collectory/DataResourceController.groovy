@@ -6,7 +6,6 @@ import au.org.ala.collectory.DataResource
 
 class DataResourceController extends au.org.ala.collectory.DataResourceController implements ProviderGroupControllerTrait{
 
-    @Override
     def list() {
         if(params.q){
             if (params.message) {
@@ -17,7 +16,7 @@ class DataResourceController extends au.org.ala.collectory.DataResourceControlle
             [instanceList: search, entityType: 'DataResource', instanceTotal: search.size()]
         }
         else {
-            super.list()
+            super.list.call()
         }
     }
 }

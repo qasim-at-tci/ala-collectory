@@ -16,6 +16,7 @@ class ContactController extends au.org.ala.collectory.ContactController{
         return true
     }
 
+    @Override
     def list() {
         if(params.q){
             def results = Contact.findAllByEmailLikeOrLastNameLikeOrFirstNameLike('%' + params.q + '%', params.q, params.q)

@@ -3,9 +3,8 @@ package uk.org.nbn.collectory
 
 class PublicController extends au.org.ala.collectory.PublicController {
 
-    @Override
     def showDataProvider() {
-        def model = super.showDataProvider()
+        def model = super.showDataProvider.call()
         if (model) {
             log.info("user id = " + collectoryAuthService?.authService.getUserId())
 

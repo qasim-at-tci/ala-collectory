@@ -14,7 +14,6 @@ class DataProviderController extends au.org.ala.collectory.DataProviderControlle
 
     def sensitiveDataService
 
-    @Override
     def list() {
         if(params.q){
             if (params.message) {
@@ -26,13 +25,12 @@ class DataProviderController extends au.org.ala.collectory.DataProviderControlle
             [instanceList: results, entityType: 'DataProvider', instanceTotal: results.size()]
         }
         else {
-            super.list()
+            super.list.call()
         }
     }
 
-    @Override
     def show() {
-        def model = super.show()
+        def model = super.show.call()
         model.hideSensitiveManagement = (grailsApplication.config.sensitive?.hideManagementPanel?:'true').toBoolean()
         model
     }

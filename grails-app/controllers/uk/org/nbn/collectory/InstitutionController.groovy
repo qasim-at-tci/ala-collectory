@@ -4,7 +4,6 @@ import au.org.ala.collectory.Institution
 
 class InstitutionController extends au.org.ala.collectory.InstitutionController implements ProviderGroupControllerTrait{
 
-    @Override
     def list() {
         if (params.q) {
             if (params.message) {
@@ -13,7 +12,7 @@ class InstitutionController extends au.org.ala.collectory.InstitutionController 
             def results = Institution.findAllByNameLikeOrAcronymLike('%' + params.q + '%', '%' + params.q + '%')
             [institutionInstanceList: results, institutionInstanceTotal: results.size()]
         } else {
-            super.list()
+            super.list.call()
         }
     }
 
