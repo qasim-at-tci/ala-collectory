@@ -56,7 +56,7 @@ environments {
     production {
         dataSource {
             dialect = org.hibernate.dialect.MySQL5InnoDBDialect
-            dbCreate = "none"
+            dbCreate = "update"
             url = "jdbc:mysql://localhost:3306/collectory?autoReconnect=true&connectTimeout=0&useSSL=false"
             logSql = false
             properties {
