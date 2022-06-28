@@ -52,6 +52,8 @@ function showVerifiedRecordCount (wsQuery, facetVerified, labelTxt) {
 
 /************************************************************\
  * Go to 'species' page for selected node
+ *
+ * The ALA copy and paste this function in 3 js files. This will override them all.
  \************************************************************/
 function showBie(node) {
     var rank = node.attr('rank');
