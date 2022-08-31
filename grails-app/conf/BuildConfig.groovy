@@ -7,7 +7,7 @@ grails.project.target.level = 1.8
 grails.project.source.level = 1.8
 
 //grails.plugin.location."ala-bootstrap2" = "../ala-bootstrap2"
-grails.plugin.location."collectory-plugin" = "../collectory-plugin"
+//grails.plugin.location."collectory-plugin" = "../collectory-plugin"
 
 grails.project.fork = [
     test:       false,
@@ -28,6 +28,12 @@ grails.project.dependency.resolution = {
 
     repositories {
         mavenLocal()
+        mavenRepo("https://repository.gbif.org/content/repositories/uk-nbn-releases") {
+            updatePolicy 'always'
+        }
+        mavenRepo("https://repository.gbif.org/content/repositories/uk-nbn-snapshots") {
+            updatePolicy 'always'
+        }
         mavenRepo("https://nexus.ala.org.au/content/groups/public/") {
             updatePolicy 'always'
         }
@@ -38,7 +44,7 @@ grails.project.dependency.resolution = {
     }
 
     plugins {
-        //runtime ":collectory:1.9.3" //remove when using local collectory-plugin
+        compile ":collectory:1.9.4-NBN-FFTF-0-1" //remove when using local collectory-plugin
         runtime ":hibernate:3.6.10.19"
         runtime ":ala-bootstrap3:2.1.2"
         runtime ":resources:1.2.14"
