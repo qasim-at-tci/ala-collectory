@@ -1,4 +1,4 @@
-grails.project.groupId = "au.org.ala" // change this to alter the default package name and Maven publishing destination
+grails.project.groupId = "uk.org.nbn" // change this to alter the default package name and Maven publishing destination
 
 appName = "nbn-collectory"
 
