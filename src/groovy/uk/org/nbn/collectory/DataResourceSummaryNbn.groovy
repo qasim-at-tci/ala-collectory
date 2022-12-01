@@ -7,6 +7,17 @@ class DataResourceSummaryNbn extends DataResourceSummary {
     Date lastUpdated
 
     DataResourceSummaryNbn(DataResourceSummary drs) {
+        //ProviderGroupSummary
+        id = drs.id
+        uid = drs.uid
+        uri = drs.uri
+        name = drs.name
+        acronym = drs.acronym
+        shortDescription = drs.shortDescription
+        lsid = drs.lsid
+
+        //DataResourceSummary
+        taxonomyCoverageHints = taxonomyCoverageHints
         dataProvider = drs.dataProvider
         dataProviderId = drs.dataProviderId
         dataProviderUid = drs.dataProviderUid
