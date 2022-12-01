@@ -11,7 +11,7 @@ class NbnApplicationTagLib extends ApplicationTagLib{
      * resource(nbn:"true", absolute:"true", dir:"data/network/",file:"nbn.png") will pull the resource from the nbn web-app
      */
     Closure resource = { attrs ->
-        if (!attrs.plugin && !attrs.nbn) {
+        if (!(attrs.absolute || attrs.plugin || attrs.nbn)) {
             attrs.plugin = PLUGIN_NAME
         }
         super.resource.call(attrs)
