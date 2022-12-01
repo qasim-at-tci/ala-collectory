@@ -35,7 +35,42 @@ class DataController extends au.org.ala.collectory.DataController{
     }
 
 
-    //this is lifted from the customisation. Refactor another time
+    //lifted from ALA. Will not be needed if domains are modified in the fork
+    def saveEntity = {
+        def pg = params.pg
+        def obj = params.json
+        def urlForm = params.entity
+        def clazz = capitalise(urlForm)
+
+        if (pg) {
+            println(pg.getClass().getSimpleName())
+            // check type
+            if (pg.getClass().getSimpleName() == clazz || pg.getClass().getSimpleName() == clazz+"Nbn") {
+                // update
+                crudService."update${clazz}"(pg, obj)
+                if (pg.hasErrors()) {
+                    badRequest pg.errors
+                } else {
+                    addContentLocation "/ws/${pg.urlForm()}/${params.uid}"
+                    success "updated ${clazz}"
+                }
+            } else {
+                badRequest "entity with uid = ${params.uid} is not ${clazz == 'Institution'? 'an' : 'a'} ${clazz}"
+            }
+        } else {
+            // doesn't exist insert
+            pg = crudService."insert${clazz}"(obj)
+            if (pg.hasErrors()) {
+                badRequest pg.errors
+            } else {
+                created pg.urlForm(), pg.uid
+            }
+        }
+    }
+
+
+    //This is a new method which consolodates the complicated query NBN use in the customised getEntity.
+    //The code is lifted from the customisation. Refactor another time
     def complexEntityQuery(domain) {
         // define additional behaviour parameters for dataResource only - potential for this to be extended to other classes too?
 

@@ -77,4 +77,54 @@ class CrudService extends au.org.ala.collectory.CrudService{
             }
         }
     }
+
+    def insertCollectionNbn(obj) {
+        insertCollection(obj)
+    }
+    def insertDataHubNbn(obj) {
+        insertDataHub(obj)
+    }
+    def insertDataProviderNbn(obj) {
+        insertDataProvider(obj)
+    }
+    def insertDataResourceNbn(obj) {
+        insertDataResource(obj)
+    }
+    def insertInstitutionNbn(obj) {
+        insertInstitution(obj)
+    }
+
+    def readCollectionNbn(Collection obj) {
+        readCollection(obj)
+    }
+    def readDataHubNbn(DataHub obj) {
+        readDataHub(obj)
+    }
+    def readDataProviderNbn(DataProvider obj) {
+        readDataProvider(obj)
+    }
+    def readDataResourceNbn(DataResource obj) {
+        readDataResource(obj)
+    }
+    def readInstitutionNbn(Institution obj) {
+        readInstitution(obj)
+    }
+
+    def updateCollectionNbn(c, obj) {
+        updateCollection(c, obj)
+    }
+    def updateDataHubNbn(dh, obj) {
+        updateDataHub(dh, obj)
+    }
+    def updateDataProviderNbn(dp, obj) {
+        updateDataProvider(dp, obj)
+    }
+    def updateDataResourceNbn(dr, obj) {
+        updateDataResource(dr, obj)
+    }
+    def updateInstitutionNbn(inst, obj) {
+        updateInstitution(inst, obj)
+    }
+
+
 }
