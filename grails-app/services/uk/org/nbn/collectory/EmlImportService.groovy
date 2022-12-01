@@ -1,6 +1,7 @@
 package uk.org.nbn.collectory
 
 import au.org.ala.collectory.Contact
+import au.org.ala.collectory.Licence
 import grails.transaction.NotTransactional
 import grails.transaction.Transactional
 import groovy.util.slurpersupport.GPathResult
@@ -36,8 +37,40 @@ class EmlImportService extends au.org.ala.collectory.EmlImportService{
     }
 
     @Override
+    def getLicence(eml){
+
+        def licenceInfo = [licenseType:'', licenseVersion:'']
+        //try and match the acronym to licence
+        def rights = this.collectParas(eml.dataset.intellectualRights?.para)
+
+        def matchedLicence = Licence.findByAcronym(rights)
+        if(!matchedLicence) {
+            //attempt to match the licence
+            def licenceUrl = eml.dataset.intellectualRights?.para?.ulink?.@url.text().trim() //NBN added
+            if (licenceUrl.endsWith("/")) licenceUrl = licenceUrl[0..-2] //standardise without trailing '/' NBN added
+            def licence = Licence.findByUrl(licenceUrl)
+            if (licence == null) {
+                if (licenceUrl.contains("http://")) {
+                    matchedLicence = Licence.findByUrl(licenceUrl.replaceAll("http://", "https://"))
+                } else {
+                    matchedLicence = Licence.findByUrl(licenceUrl.replaceAll("https://", "http://"))
+                }
+            } else {
+                matchedLicence = licence
+            }
+        }
+
+        if(matchedLicence){
+            licenceInfo.licenseType = matchedLicence.acronym
+            licenceInfo.licenseVersion = matchedLicence.licenceVersion
+        }
+
+        licenceInfo
+    }
+
+    @Override
     @NotTransactional
-    //overriding transactional methods produces stackoverflow ( fixed in > Gorm 6.1.4)
+    //overriding transactional methods and calling super produces stackoverflow ( fixed in > Gorm 6.1.4)
     def extractFromEml(eml, dataResource) {
         extractFromEmlTransactional(eml, dataResource)
     }
@@ -47,13 +80,14 @@ class EmlImportService extends au.org.ala.collectory.EmlImportService{
 
         contacts.each { contact ->
             contact.firstName = contact.firstName?:''
-            contact.lastName = contact.firstName?:''
+            contact.lastName = contact.lastName?:''
             contact.email = contact.email?:''
             if (!contact.phone || !contact.mobile) {
                 if (!addPhoneToContact(eml.dataset.creator, contact))
                     addPhoneToContact(eml.dataset.metadataProvider, contact)
             }
         }
+        contacts
     }
 
 
