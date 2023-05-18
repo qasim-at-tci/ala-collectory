@@ -120,6 +120,18 @@
                 <cl:editButton uid="${instance.uid}" page="/shared/base" notAuthorisedMessage="You are not authorised to edit this resource."/>
               </div>
 
+              <g:if test="${instance.resourceType == 'records'}">
+                <div class="show-section well">
+                    <h2>Access Controls</h2>
+                    <p>
+                    <span class="category">Public resolution that will be applied next data processing</span>:
+                    <nbnac:metersToKmAndFormat meters="${(dataResourceNbn?.publicResolutionToBeApplied) ?: 0}"/>
+                    </p>
+                <cl:editButton uid="${instance.uid}" controller="dataResource" action="accessControls"/>
+
+                </div>
+            </g:if>
+
               <!-- description -->
               <div class="show-section well">
                 <h2><g:message code="collection.show.title.description" /></h2>

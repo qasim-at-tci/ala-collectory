@@ -1,4 +1,6 @@
 import au.org.ala.collectory.ExtendedPluginAwareResourceBundleMessageSource
+import uk.org.nbn.lib.dao.supabase.DataResourceNbnDAOImpl
+import grails.util.Holders
 
 // Place your Spring DSL code here
 beans = {
@@ -10,6 +12,8 @@ beans = {
     }
 }
 
-// Place your Spring DSL code here
-//beans = {
-//}
+beans = {
+    def config = Holders.config
+    dataResourceNbnDAO(DataResourceNbnDAOImpl,config.supabase.url, config.supabase.servicekey)
+
+}

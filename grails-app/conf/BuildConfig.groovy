@@ -41,6 +41,7 @@ grails.project.dependency.resolution = {
 
     dependencies {
         runtime 'mysql:mysql-connector-java:5.1.42'
+        compile 'uk.org.nbn.lib:nbn-common-lib:0.0.1-SNAPSHOT'
     }
 
     plugins {
